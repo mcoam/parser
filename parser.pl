@@ -15,6 +15,7 @@ my $ldif = Net::LDAP::LDIF->new($file, "r", onerror => 'undef');
 while (not $ldif->eof()){
    my $entry = $ldif->read_entry ();
    if ($entry->{attrs}{objectclass}[0] eq 'organizationalPerson'){
+  # if ($entry->{attrs}{objectclass}[0] eq 'inetOrgPerson'){ ##Zimbra old -> inetOrgPerson 
       print "ca $entry->{attrs}{mail}[0] 12345678 zimbraId $entry->{attrs}{zimbraid}[0]";
       print "\n\n";
       print "ma $entry->{attrs}{mail}[0] ";
