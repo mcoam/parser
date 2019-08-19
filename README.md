@@ -4,7 +4,7 @@
 
 
 ```ruby
-su - zimbra -c "/opt/zimbra/libexec/zmslapcat -c /var/tmp"
+su - zimbra -c "/opt/zimbra/libexec/zmslapcat /var/tmp"
 scp /var/tmp/ldap.bak root@remoteServer:/path
 ```
 
